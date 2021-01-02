@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab5</title>
+    <meta charset='UTF-8' />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+ </head>
+ <body>
+    <div class="page">
+        <div class='wall'>
+            <div class='post'>
+                    <h4 class='header'>Новость 1</h4>
+                    <p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!</p>
+                <p class='fulltext'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.</p>
+            <div class='butt' ><input type='button' value='Открыть всплываюшее окно' onclick='show(0)' /></div>
+            </div>
+            <div class='post'>
+                    <h4 class='header'>Новость 2</h4>
+                    <p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!</p>
+                <p class='fulltext'>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.</p>
+            <div class='butt' ><input type='button' value='Открыть всплываюшее окно' onclick='show(1)' /></div>
+            </div>
+            <div class='post'>
+                    <h4 class='header'>Новость 3</h4>
+                    <p class='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!</p>
+                <p class='fulltext'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? <br> Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.</p>
+            <div class='butt' ><input type='button' value='Открыть всплываюшее окно' onclick='show(2)' /></div>
+            </div>
+        </div>
+    </div>
+    <div class='fullsize'>
+    <section>
+        <h1></h1>
+        <p></p>
+    </section>
+</div>
+ </body>
+ <script>
+ var posts = document.querySelectorAll('.post');
+ var back = document.querySelector('.fullsize');
+ var head = back.querySelector('section').querySelector('h1');
+ var para = back.querySelector('section').querySelector('p');
+ back.onclick = function(){
+                 back.style.display = 'none';
+                 head.innerHTML = '';
+                 para.innerHTML = '';
+ 		    };
+ function show(num){
+     back.style.display = 'flex';
+     head.innerHTML = posts[num].querySelector('.header').innerHTML;
+     para.innerHTML = posts[num].querySelector('.header').innerHTML+':'+posts[num].querySelector('.fulltext').innerHTML;
+ }
+ </script>
+</html>
